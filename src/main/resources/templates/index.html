@@ -18,7 +18,7 @@
 
 <!--</head>-->
 <head>
-    <title>Recipe Home</title>
+    <title>User Management System Home</title>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -64,27 +64,9 @@
                             </tr>
                             </thead>
 
-                            <!--<tr >-->
-                                    <!--&lt;!&ndash;th:remove="all">&ndash;&gt;-->
-                                <!--<td>123</td>-->
-                                <!--<td>User TMP 1</td>-->
-                                <!--<td><a href="#">Detail</a></td>-->
-                                <!--<td><a href="#">Edit</a></td>-->
-                                <!--<td><a href="#">Remove</a></td>-->
-                            <!--</tr>-->
-                            <!--<tr >-->
-                                    <!--&lt;!&ndash;th:remove="all">&ndash;&gt;-->
-                                <!--<td>12333</td>-->
-                                <!--<td>User TMP 2</td>-->
-                                <!--<td><a href="#">Detail</a></td>-->
-                                <!--<td><a href="#">Edit</a></td>-->
-                                <!--<td><a href="#">Remove</a></td>-->
-                            <!--</tr>-->
-
-
                             <tr th:each="user : ${users}">
                                 <td th:text="${user.id}">334</td>
-                                <td th:text="${user.userName}">Tasty Goodnees 3</td>
+                                <td th:text="${user.userName}">User name</td>
                                 <td><a href="#" th:href="@{'/user/' + ${user.id} + '/show'}">Detail</a></td>
                                 <td><a href="#" th:href="@{'/user/' + ${user.id} + '/update'}">Edit</a></td>
                                 <td><a href="#" th:href="@{'/user/' + ${user.id} + '/delete'}">Remove</a></td>

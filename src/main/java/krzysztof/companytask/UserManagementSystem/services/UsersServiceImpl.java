@@ -6,6 +6,7 @@ import krzysztof.companytask.UserManagementSystem.converters.UserToUserCommand;
 import krzysztof.companytask.UserManagementSystem.domain.User;
 import krzysztof.companytask.UserManagementSystem.repositories.UserRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.Optional;
@@ -32,21 +33,26 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public User getUserById(Long id) {
+    public User findById(Long id) {
         Optional<User> optionalUser = userRepository.findById(id);
         if (!optionalUser.isPresent()){
-//            throw new NotFoundException("User with id: "+String.valueOf(id)+ "was not found.");
-            System.out.println("User with id: "+String.valueOf(id)+ "was not found.");
+            throw new RuntimeException("User with id: "+String.valueOf(id)+ "was not found.");
         }
         return optionalUser.get();
     }
 
     @Override
-    public void deleteUserById(Long id) {
-
+    public UserCommand findCommandById(Long id){
+        return userToUserCommand.convert(findById(id));
     }
 
     @Override
+    public void deleteUserById(Long id) {
+        userRepository.deleteById(id);
+    }
+
+    @Override
+    @Transactional
     public UserCommand saveUserCommand(UserCommand userCommand) {
         User detachedUser = userCommandToUser.convert(userCommand);
         User savedUser = userRepository.save(detachedUser);

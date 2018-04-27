@@ -7,7 +7,10 @@ import java.util.Set;
 
 public interface UsersService {
     Set<User> getUsers();
-    User getUserById(Long id);
+    User findById(Long id);
+
+    UserCommand findCommandById(Long id);
+
     void deleteUserById(Long id);
     UserCommand saveUserCommand(UserCommand userCommand);
 }

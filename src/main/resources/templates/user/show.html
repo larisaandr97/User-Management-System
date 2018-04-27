@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Recipe Home</title>
+    <title>User Management System Homew</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,26 +28,56 @@
             <div class="card">
 
                 <div class="card-header">
-                    <h2 class="card-title" th:utext="${'firstName:' + user.firstName}">Note
-                        title</h2>
+                    <h2 class="card-title" th:utext="${'User:' + user.userName}">
+                        Note title</h2>
                 </div>
-                <!--<div class="card-body" style="padding: 25px;">-->
-                    <!--<div class="row">-->
-                        <!--<div class="col-md-12">-->
-                            <!--<h4 th:text="${'Category: '+note.category}">-->
-                                <!--Category:-->
-                            <!--</h4>-->
-                        <!--</div>-->
-                    <!--</div>-->
+
+
+                <div class="card-body" style="padding: 25px;">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 th:text="${'User Name: '+user.userName}"></h4>
+                        </div>
+                        <div class="col-md-12">
+                            <h4 th:text="${'Password: '+user.password}"></h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 th:text="${'First Name: '+user.firstName}"></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 th:text="${'Last Name: '+user.lastName}"></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 th:text="${'Birthdate: '+user.dateOfBirth}"></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 th:text="${'First Name: '+user.firstName}"></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 th:text="${'First Name: '+user.firstName}"></h4>
+                        </div>
+                    </div>
                     <!--<div class="row justify-content-md-right">-->
-                        <!--<div class="col-md-12" style="min-height: 300px">-->
-                            <!--<p th:text="${note.text}">-->
-                                <!--Text here-->
-                            <!--</p>-->
-                        <!--</div>-->
+                    <!--<div class="col-md-12" style="min-height: 300px">-->
+                    <!--<p th:text="${note.text}">-->
+                    <!--Text here-->
+                    <!--</p>-->
+                    <!--</div>-->
                     <!--</div>-->
 
-                <!--</div>-->
+                </div>
 
 
                 <div class="card-footer">

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Recipe Home</title>
+    <title>User Management System Home</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -33,7 +33,7 @@
                 <div class="pannel-group">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h1 class="panel-title">Edit Recipe Information</h1>
+                            <h1 class="panel-title">Edit User Information</h1>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -128,57 +128,6 @@
                             </div>
                         </div>
                     </div>
-                    <!--<div class="panel panel-primary">-->
-                        <!--<div class="panel-heading">-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-11 ">-->
-                                    <!--<h1 class="panel-title">Ingredients</h1>-->
-                                <!--</div>-->
-                                <!--<div class="col-md-1">-->
-                                    <!--<a class="btn btn-default" href="#" th:href="@{'/recipe/' + ${recipe.id} + '/ingredients'}" role="button">View</a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="panel-body">-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-12">-->
-                                    <!--<ul th:if="${not #lists.isEmpty(recipe.ingredients)}">-->
-                                        <!--<li th:remove="all">1 Cup of milk</li>-->
-                                        <!--<li th:remove="all">1 Teaspoon of chocolate</li>-->
-                                        <!--<li th:remove="all">asdf</li>-->
-                                        <!--<li th:each="ingredient : ${recipe.ingredients}"-->
-                                            <!--th:text="${(ingredient.getAmount() +-->
-                                        <!--' ' + ingredient.uom.getDescription() +-->
-                                        <!--' - ' + ingredient.getDescription())}">1 Teaspoon of Sugar-->
-                                        <!--</li>-->
-                                    <!--</ul>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="panel panel-primary">-->
-                        <!--<div class="panel-heading">-->
-                            <!--<h1 class="panel-title">Directions</h1>-->
-                        <!--</div>-->
-                        <!--<div class="panel-body">-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-12 form-group">-->
-                                    <!--<textarea class="form-control" rows="3" th:field="*{directions}"></textarea></div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="panel panel-primary">-->
-                        <!--<div class="panel-heading">-->
-                            <!--<h1 class="panel-title">Notes</h1>-->
-                        <!--</div>-->
-                        <!--<div class="panel-body">-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-12 form-group">-->
-                                    <!--<textarea class="form-control" rows="3" th:field="*{notes.recipeNotes}"></textarea>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
@@ -186,92 +135,5 @@
     </div>
 </div>
 </body>
-
-
-
-
-
-<!--<body>-->
-
-<!--<div class="conteiner-fluid jusftiy-content-md-center" style="margin: 50px">-->
-    <!--<div class="row jusftiy-content-md-center">-->
-        <!--<div class="col-md-6 offset-md-3">-->
-            <!--<form id="noteform" th:object="${user}" th:action="@{/user/}" method="post">-->
-                <!--<input type="hidden" th:field="*{id}">-->
-                <!--<div class="card">-->
-                    <!--<div class="card-header">-->
-                        <!--<h1 class="card-title"> Add new user.</h1>-->
-                    <!--</div>-->
-
-
-                    <!--<div class="card-body">-->
-
-                        <!--<div class="row" style="padding-top: 25px">-->
-                            <!--<div class="col-md-5 offset-md-1">-->
-
-                                 <!--&lt;!&ndash;th:class="${#fields.hasErrors('title')}&ndash;&gt;-->
-                                <!--&lt;!&ndash;? 'col-md-5 offset-md-1 has-danger' : 'col-md-5 offset-md-1'">&ndash;&gt;-->
-                                <!--<label for="titleInput">User name: </label>-->
-                                <!--<input id="titleInput" class="form-control" type="text" th:field="*{userName}">-->
-                                       <!--&lt;!&ndash;th:errorclass="has-danger"&ndash;&gt;-->
-                            <!--</div>-->
-
-                            <!--<div class="col-md-5 offset-md-1">-->
-                                <!--<label for="passwordInput">Password: </label>-->
-                                <!--<input id="passwordInput" class="form-control" type="text" th:field="*{password}">-->
-                            <!--</div>-->
-                        <!--</div>-->
-
-                        <!--<div class="row" style="padding-top: 25px">-->
-                            <!--<div class="col-md-5 offset-md-1">-->
-                                <!--<label for="firstName">First name: </label>-->
-                                <!--<input id="firstName" class="form-control" type="text" th:field="*{firstName}">-->
-                            <!--</div>-->
-
-                            <!--<div class="col-md-5 offset-md-1">-->
-                                <!--<label for="lastName">Last name: </label>-->
-                                <!--<input id="lastName" class="form-control" type="text" th:field="*{lastName}">-->
-                            <!--</div>-->
-                        <!--</div>-->
-
-                        <!--<div class="row" style="padding-top: 25px">-->
-                            <!--<div class="col-md-5 offset-md-1">-->
-                                <!--<label for="dateOfBirth">Birthdate: </label>-->
-                                <!--<input id="dateOfBirth" class="form-control" type="text" th:field="*{dateOfBirth}">-->
-                            <!--</div>-->
-
-                            <!--&lt;!&ndash;<div class="col-md-5">&ndash;&gt;-->
-                                <!--&lt;!&ndash;<label>Category: </label>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<select class="form-control" th:field="*{category}">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<option value="Event" th:selected="*{category == 'Event'}">Event</option>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<option value="Important" th:selected="*{category== 'Important'}">Important&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</option>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<option value="Thought" th:selected="*{category == 'Thought'}">Thought</option>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<option value="Dummy" th:selected="*{category == 'Dummy'}">Dummy</option>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</select>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                        <!--</div>-->
-                    <!--</div>-->
-
-
-                    <!--<div class="card-footer">-->
-                        <!--<div class="btn-group d-flex" role="group">-->
-                            <!--<a th:href="@{/}" href="#" class="btn btn-info w-100" role="button">Home</a>-->
-                            <!--<a type="submit" class="btn btn-success w-100"-->
-                               <!--onclick="document.getElementById('userform').submit();" role="button">-->
-                                <!--Submit-->
-                            <!--</a>-->
-                            <!--<a th:if="${user.id}" href="#" class="btn btn-danger" role="button">Delete</a>-->
-                        <!--</div>-->
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</form>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-<!--</body>-->
-
-
 
 </html>
