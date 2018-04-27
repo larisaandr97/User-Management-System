@@ -1,29 +1,34 @@
-package krzysztof.companytask.UserManagementSystem.domain;
+package krzysztof.companytask.UserManagementSystem.commands;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
-@Data
-@Entity
-public class User {
+@NoArgsConstructor
+//@Setter
+//@Getter
+public class UserCommand {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotBlank
+    @Size(min = 3, max = 40)
     private String userName;
+
+//    @NotBlank
+//    private String category;
+
+//    @NotBlank
+//    @Size(max = 1000)
+//    private String password;
+
     private String password;
     private String firstName;
     private String lastName;
     private String dateOfBirth;
-    // private Set<UsersGroup> usersGroup;
-
 
     public Long getId() {
         return id;

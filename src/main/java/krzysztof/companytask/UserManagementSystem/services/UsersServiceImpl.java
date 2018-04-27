@@ -1,6 +1,8 @@
 package krzysztof.companytask.UserManagementSystem.services;
 
-import javassist.NotFoundException;
+import krzysztof.companytask.UserManagementSystem.commands.UserCommand;
+import krzysztof.companytask.UserManagementSystem.converters.UserCommandToUser;
+import krzysztof.companytask.UserManagementSystem.converters.UserToUserCommand;
 import krzysztof.companytask.UserManagementSystem.domain.User;
 import krzysztof.companytask.UserManagementSystem.repositories.UserRepository;
 import org.springframework.stereotype.Service;
@@ -13,9 +15,13 @@ import java.util.Set;
 public class UsersServiceImpl implements UsersService {
 
     private UserRepository userRepository;
+    private UserToUserCommand userToUserCommand;
+    private UserCommandToUser userCommandToUser;
 
-    public UsersServiceImpl(UserRepository userRepository) {
+    public UsersServiceImpl(UserRepository userRepository, UserToUserCommand userToUserCommand, UserCommandToUser userCommandToUser) {
         this.userRepository = userRepository;
+        this.userToUserCommand = userToUserCommand;
+        this.userCommandToUser = userCommandToUser;
     }
 
     @Override
@@ -38,5 +44,12 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public void deleteUserById(Long id) {
 
+    }
+
+    @Override
+    public UserCommand saveUserCommand(UserCommand userCommand) {
+        User detachedUser = userCommandToUser.convert(userCommand);
+        User savedUser = userRepository.save(detachedUser);
+        return userToUserCommand.convert(savedUser);
     }
 }
