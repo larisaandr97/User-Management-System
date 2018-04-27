@@ -1,0 +1,15 @@
+body{
+    background-color: ghostwhite;
+    font-family: "Comic Sans MS";
+}
+.card-header{
+    background-color: #2165ff;
+}
+.card-body{
+    background-color: ghostwhite;
+}
+
+.card-footer{
+    background-color: #2165ff;
+}
+.card
