@@ -2,6 +2,11 @@ body{
     background-color: ghostwhite;
     font-family: "Comic Sans MS";
 }
+.container-fluid_new{
+    width: 100%;
+    margin: 0;
+}
+
 .card-header{
     background-color: #2165ff;
 }
@@ -12,4 +17,5 @@ body{
 .card-footer{
     background-color: #2165ff;
 }
+
 .card

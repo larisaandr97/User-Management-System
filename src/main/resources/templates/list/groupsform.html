@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>User Management System Home</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" media="all" href="../static/style.css" th:href="@{/style.css}">
+</head>
+
+
+<body>
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form  th:object="${usersGroup}" th:action="@{/groups/}" method="post">
+                <input type="hidden" th:field="*{id}"/>
+                <div class="pannel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Edit User Information</h1>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3 form-group">
+                                    <label>Group name 2:</label>
+                                    <input type="text" class="form-control" th:field="*{groupName}"/>
+                                </div>
+                            </div>
+                        </div>
+
+                            <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="col-md-3 form-group">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label>First name:</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<input type="text" class="form-control" th:field="*{firstName}"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="col-md-3 form-group">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label>Last name:</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<input type="text" class="form-control" th:field="*{lastName}"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                            <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="col-md-3 form-group">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label>Date of Birth:</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<input type="text" class="form-control" th:field="*{dateOfBirth}"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;&lt;!&ndash;<div class="col-md-3 form-group">&ndash;&gt;&ndash;&gt;-->
+                                    <!--&lt;!&ndash;&lt;!&ndash;<label>Password:</label>&ndash;&gt;&ndash;&gt;-->
+                                    <!--&lt;!&ndash;&lt;!&ndash;<input type="text" class="form-control" th:field="*{password}"/>&ndash;&gt;&ndash;&gt;-->
+                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                            <!--<div class="row">-->
+                                <!--&lt;!&ndash;<div class="col-md-3 form-group">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label>Categories:</label>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="col-md-9 form-group">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="radio">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<label>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<input type="checkbox" value=""/>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;Cat 1&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="radio" th:remove="all">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<label>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<input type="checkbox" value=""/>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;Cat 2&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="col-md-3 form-group">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label>Prep Time:</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<input type="text" class="form-control" th:field="*{prepTime}"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="col-md-3 form-group">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label>Cooktime:</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<input type="text" class="form-control" th:field="*{cookTime}"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="col-md-3 form-group">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label>Difficulty:</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<select class="form-control" th:field="*{difficulty}">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<option th:each="difficultyValue : ${T(guru.springframework.domain.Difficulty).values()}"&ndash;&gt;-->
+                                                <!--&lt;!&ndash;th:value="${difficultyValue.name()}"&ndash;&gt;-->
+                                                <!--&lt;!&ndash;th:text="${difficultyValue.name()}"&ndash;&gt;-->
+                                        <!--&lt;!&ndash;&gt;val</option>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<select class="form-control" th:remove="all">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<option>Easy</option>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<option>Medium</option>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<option>Hard</option>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="col-md-3 form-group">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label>Servings:</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<input type="text" class="form-control" th:field="*{servings}"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="col-md-3 form-group">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label>Source:</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<input type="text" class="form-control" th:field="*{source}"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="col-md-3 form-group">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label>URL:</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<input type="text" class="form-control" th:field="*{url}"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--<div>-->
+    <!--<h1>Hello</h1>-->
+<!--</div>-->
+
+</body>
+
+</html>

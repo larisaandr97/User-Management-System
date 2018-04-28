@@ -12,8 +12,8 @@ public class UserCommand {
 
     private Long id;
 
-    @NotBlank
-    @Size(min = 3, max = 40)
+//    @NotBlank
+//    @Size(min = 3, max = 40)
     private String userName;
 
 //    @NotBlank

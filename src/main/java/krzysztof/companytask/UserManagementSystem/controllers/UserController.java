@@ -18,7 +18,7 @@ public class UserController {
     @GetMapping
     @RequestMapping("/user/{id}/show")
     public String showById(@PathVariable String id, Model model){
-        model.addAttribute("user", usersService.findById(new Long(id)));
+        model.addAttribute("user", usersService.findById(Long.valueOf(id)));
         return "user/show";
     }
 
